@@ -11,7 +11,7 @@ document.getElementById('card4').addEventListener('click', function(){
     window.location.href = "./get-bonus.html";
 })
 document.getElementById('card5').addEventListener('click', function(){
-    window.location.href = "./add-money.html";
+    window.location.href = "./pay-bill.html";
 })
 document.getElementById('card6').addEventListener('click', function(){
     window.location.href = "./add-money.html";
