@@ -8,7 +8,7 @@ document.getElementById('card3').addEventListener('click', function(){
     window.location.href = "./transfer.html";
 })
 document.getElementById('card4').addEventListener('click', function(){
-    window.location.href = "./add-money.html";
+    window.location.href = "./get-bonus.html";
 })
 document.getElementById('card5').addEventListener('click', function(){
     window.location.href = "./add-money.html";
