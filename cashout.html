@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Payooo Add Money</title>
+    <title>Payooo Cash Out</title>
     <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <script src="https://kit.fontawesome.com/22ce2c0db2.js" crossorigin="anonymous"></script>
@@ -30,11 +30,11 @@
             <h1 class="text-[1.5rem] font-bold text-[#080808]">🔥 Welcome to Payooo!</h1>
             <p class="text-base font-normal text-[#08080880] mt-[12px] mb-[24px]">Enjoy easy and convenient financial services with us. Cashout charge is low and </p>
             <div class="cards grid grid-cols-3 grid-rows-2 gap-[16.5px]">
-                <div id="card1" class="card max-w-[123px] border-1 border-[#0874F2] bg-[#0874f20d] rounded-[12px] flex flex-col justify-center items-center min-h-[90px]">
+                <div id="card1" class="card max-w-[123px] border-1 border-[#0808081a] rounded-[12px] flex flex-col justify-center items-center min-h-[90px] hover:bg-[#0874f20d]">
                     <img src="assets/wallet1.png" alt="" class="w-[24px] h-[24px]">
                     <h2 class="text-[#080808b3] text-[0.875rem] font-normal mt-[8px] text-center">Add Money</h2>
                 </div>
-                <div id="card2" class="card max-w-[123px] border-1 border-[#0808081a] rounded-[12px] flex flex-col justify-center items-center min-h-[90px] hover:bg-[#0874f20d]">
+                <div id="card2" class="card max-w-[123px] bg-[#0874f20d] border-1 border-[#0874F2] rounded-[12px] flex flex-col justify-center items-center min-h-[90px] hover:bg-[#0874f20d]">
                     <img src="assets/send1.png" alt="" class="w-[24px] h-[24px]">
                     <h2 class="text-[#080808b3] text-[0.875rem] font-normal mt-[8px] text-center">Cashout</h2>
                 </div>
@@ -58,33 +58,24 @@
         </div>
     </section>
 
-    <section class="add-money">
-        <h2 class="text-[1.125rem] font-bold text-[#080808e6] ml-[24px] mt-[31.5px] mb-[16px]">Add Money</h2>
+    <section class="cash-out">
+        <h2 class="text-[1.125rem] font-bold text-[#080808e6] ml-[24px] mt-[31.5px] mb-[16px]">Cash Out</h2>
         <div>
             <form class="bg-white p-[24px] rounded-[15px] mx-[24px]">
-                <label for="" class="text-[#080808b3] font-medium text-base">Select A Bank</label>
+                <label for="" class="text-[#080808b3] font-medium text-base">Agent Number</label>
                 <br>
-                <select id="select-bank" class="select rounded-3xl py-[10px] px-[20px] bg-[#f4f5f7] border-0 mt-[10px] w-full mb-[16px]">
-                    <option disabled selected>Select bank</option>
-                    <option>Al-Arafah Islami Bank</option>
-                    <option>IFIC Bank</option>
-                    <option>Dhaka Bank</option>
-                </select>
-                <label for="" class="text-[#080808b3] font-medium text-base">Bank Account Number</label>
+                <input type="text" placeholder="Enter 11 digit number" id="agent-number" class="input bg-[#f4f5f7] rounded-3xl p-[20px] border-0 mt-[10px] w-full mb-[16px]" />
+                <label for="" class="text-[#080808b3] font-medium text-base">Amount</label>
                 <br>
-                <input type="text" placeholder="Enter 11 digit account number" id="bank-account" class="input bg-[#f4f5f7] rounded-3xl p-[20px] border-0 mt-[10px] w-full mb-[16px]" />
-                <label for="" class="text-[#080808b3] font-medium text-base">Amount to Add</label>
-                <br>
-                <input type="text" placeholder="Add amount to withdraw" id="add-amount" class="input bg-[#f4f5f7] rounded-3xl p-[20px] border-0 mt-[10px] w-full mb-[16px]" />
+                <input type="text" placeholder="Enter amount to withdraw" id="cashout-amount" class="input bg-[#f4f5f7] rounded-3xl p-[20px] border-0 mt-[10px] w-full mb-[16px]" />
                 <label for="" class="text-[#080808b3] font-medium text-base">Pin Number</label>
                 <br>
-                <input type="text" placeholder="Enter 4 digit pin number" id="add-pin" class="input bg-[#f4f5f7] rounded-3xl p-[20px] border-0 mt-[10px] w-full mb-[16px]" />
-                <button class="btn bg-[#0874F2] text-white rounded-3xl text-[1.25rem] font-semibold w-full py-[14px]" id="addMoneyBtn">Add Money</button>
+                <input type="text" placeholder="Enter 4 digit pin number" id="cashout-pin" class="input bg-[#f4f5f7] rounded-3xl p-[20px] border-0 mt-[10px] w-full mb-[16px]" />
+                <button class="btn bg-[#0874F2] text-white rounded-3xl text-[1.25rem] font-semibold w-full py-[14px]" id="withdrawMoneyBtn">Withdraw Money</button>
             </form>
         </div>
     </section>
-
-    <script src="js/addMoney.js"></script>
+    <script src="js/cashout.js"></script>
     <script src="js/home.js"></script>
 </body>
 </html>
