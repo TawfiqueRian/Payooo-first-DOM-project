@@ -50,6 +50,11 @@ document.getElementById('addMoneyBtn').addEventListener('click', function(e){
     e.preventDefault();
     const availableBalance = getAvailableBalance('available-balance');
     const addAmount = getInputNumber('add-amount');
+    if(addAmount <= 0)
+    {
+        alert('Invalid amount');
+        return;
+    }
     const bankAccount = getInputValue('bank-account');
     const validPin = '1234';
     const pinNumber = getInputValue('add-pin');
@@ -84,6 +89,11 @@ document.getElementById('withdrawMoneyBtn').addEventListener('click', function(e
     e.preventDefault();
     const availableBalance = getAvailableBalance('available-balance');
     const cashoutAmount = getInputNumber('cashout-amount');
+    if(cashoutAmount <= 0 || cashoutAmount > availableBalance)
+    {
+        alert('Invalid amount');
+        return;
+    }
     const agentNumber = getInputValue('agent-number');
     const validPin = '1234';
     const pinNumber = getInputValue('cashout-pin');
@@ -118,6 +128,11 @@ document.getElementById('sendMoneyBtn').addEventListener('click', function(e){
     e.preventDefault();
     const availableBalance = getAvailableBalance('available-balance');
     const transferAmount = getInputNumber('transfer-amount');
+    if(transferAmount <= 0 || transferAmount > availableBalance)
+    {
+        alert('Invalid amount');
+        return;
+    }
     const userNumber = getInputValue('user-account-number');
     const validPin = '1234';
     const pinNumber = getInputValue('transfer-pin');
@@ -152,6 +167,11 @@ document.getElementById('payNowBtn').addEventListener('click', function(e){
     e.preventDefault();
     const availableBalance = getAvailableBalance('available-balance');
     const billPayAmount = getInputNumber('bill-amount');
+    if(billPayAmount <= 0 || billPayAmount > availableBalance)
+    {
+        alert('Invalid amount');
+        return;
+    }
     const validPin = '1234';
     const pinNumber = getInputValue('bill-pin');
     if(pinNumber !== validPin)
