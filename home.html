@@ -167,7 +167,28 @@
     
     <!-- card6  -->
      <section class="card-button" id="transactions" style="display: none;">
-        <h2 class="text-[1.125rem] font-bold text-[#080808e6] ml-[24px] mt-[31.5px] mb-[16px]">Transfer Money</h2>
+        <div class="flex justify-between items-center mt-[31.5px] mb-[16px]">
+            <h2 class="text-[1.125rem] font-bold text-[#080808e6] ml-[24px] ">Transactions</h2>
+            <p class="text-[0.875rem] text-[#08080880] font-normal pr-[24px]">View All</p>
+        </div>
+
+
+        <div id="transaction-container">
+            <div class="transactionContainer bg-white mx-[24px] p-[15px] rounded-[12px] flex justify-between items-center mb-[12px]">
+                <div class="transaction-cards  flex items-center gap-[8px] ">
+                    <div class="img w-[45.5px] h-[45.5px] rounded-full bg-[#f4f5f7] flex items-center justify-center">
+                        <img src="payoo.png" alt="" class="max-w-[24px] h-[24px] ">
+                    </div>
+                    <div class="detail">
+                        <h2 class="text-base text-[#080808b3] font-semibold">Electricity Bill</h2>
+                        <p class="text-[0.75rem] text-[#080808b3]">Today 1:44 AM</p>
+                    </div>
+                </div>
+                <div class="dots">
+                    <i class="fa-solid fa-ellipsis-vertical"></i>
+                </div>
+            </div>
+        </div>
     </section>
 
     <script src="js/home.js"></script>

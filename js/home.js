@@ -42,6 +42,9 @@ function toggleCards(id, card)
     document.getElementById(card).style.backgroundColor = '#0874f20d';
 }
 
+
+const transactionsData = [];
+
 //add-money button feature
 document.getElementById('addMoneyBtn').addEventListener('click', function(e){
     e.preventDefault();
@@ -62,6 +65,13 @@ document.getElementById('addMoneyBtn').addEventListener('click', function(e){
     }
     const newAvailableBalance = availableBalance + addAmount;
     setInnerText(newAvailableBalance);
+    const data = {
+        name: 'Add Money',
+        date: new Date().toLocaleTimeString()
+    }
+
+    transactionsData.push(data);
+
     document.getElementById('select-bank').value = 'Select bank';
     document.getElementById('bank-account').value = '';
     document.getElementById('add-amount').value = '';
@@ -90,6 +100,13 @@ document.getElementById('withdrawMoneyBtn').addEventListener('click', function(e
 
     const newAmount = availableBalance - cashoutAmount;
     setInnerText(newAmount);
+
+    const data = {
+        name: 'Cash Out',
+        date: new Date().toLocaleTimeString()
+    }
+    transactionsData.push(data);
+
     document.getElementById('agent-number').value = '';
     document.getElementById('cashout-amount').value = '';
     document.getElementById('cashout-pin').value = '';
@@ -116,6 +133,14 @@ document.getElementById('sendMoneyBtn').addEventListener('click', function(e){
     }
     const newAmount = availableBalance - transferAmount;
     setInnerText(newAmount);
+
+    const data = {
+        name: 'Money Transfer',
+        date: new Date().toLocaleTimeString()
+    }
+
+    transactionsData.push(data);
+
     document.getElementById('user-account-number').value = '';
     document.getElementById('transfer-amount').value = '';
     document.getElementById('transfer-pin').value = '';
@@ -136,6 +161,14 @@ document.getElementById('payNowBtn').addEventListener('click', function(e){
     }
     const newAvailableBalance = availableBalance - billPayAmount;
     setInnerText(newAvailableBalance);
+
+    const data = {
+        name: 'Bill Pay',
+        date: new Date().toLocaleTimeString()
+    }
+
+    transactionsData.push(data);
+
     document.getElementById('select-bill-type').value = 'Select back';
     document.getElementById('biller-account-number').value = '';
     document.getElementById('bill-amount').value = '';
@@ -174,4 +207,29 @@ document.getElementById('card5').addEventListener('click', function(){
 //card6 toggle feature
 document.getElementById('card6').addEventListener('click', function(){
     toggleCards('transactions', 'card6');
+    const parentNode = document.getElementById('transaction-container');
+    parentNode.innerText = '';
+    for(const elData of transactionsData)
+    {
+        const transactionCard = document.createElement('div');
+        const elname = elData.name;
+        const eldate = elData.date;
+        transactionCard.innerHTML = `
+            <div class="transactionContainer bg-white mx-[24px] p-[15px] rounded-[12px] flex justify-between items-center mb-[12px]">
+                <div class="transaction-cards  flex items-center gap-[8px] ">
+                    <div class="img w-[45.5px] h-[45.5px] rounded-full bg-[#f4f5f7] flex items-center justify-center">
+                        <img src="payoo.png" alt="" class="max-w-[24px] h-[24px] ">
+                    </div>
+                    <div class="detail">
+                        <h2 class="text-base text-[#080808b3] font-semibold">${elname}</h2>
+                        <p class="text-[0.75rem] text-[#080808b3]">${eldate}</p>
+                    </div>
+                </div>
+                <div class="dots">
+                    <i class="fa-solid fa-ellipsis-vertical"></i>
+                </div>
+            </div>
+        `
+        parentNode.appendChild(transactionCard);
+    }
 })
