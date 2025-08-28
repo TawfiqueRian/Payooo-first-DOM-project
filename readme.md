@@ -17,7 +17,7 @@ Ans:
     step-2: Find the parent node:  
             const parentNode = document.getElementById('container');  
 
-    step-3: Append the child node  
+    step-3: Append the child node:  
             parentNode.appendChild(newDiv);  
 
 ---
